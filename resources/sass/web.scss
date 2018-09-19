@@ -1,0 +1,108 @@
+@media screen and (min-width: 1024px) {
+    .logo--menu,
+    .button--menu {
+        display: none;
+    }
+
+    .width--calc {
+        width: -webkit-calc(100% - (300/3200) * 100vw);
+        width: calc(100% - (300 / 3200) * 100vw);
+    }
+
+    #header--main {
+        display: grid;
+        grid-template-rows: 100%;
+        align-items: center;
+        width: 100%;
+        height: 190px;
+        background-color: rgba(51, 51, 51, 40);
+        z-index: 9997;
+    }
+
+    #header--wrap--menu {
+        display: grid;
+        grid-template-columns: 250px auto;
+        grid-template-areas: "grd-logo grd-menu";
+        align-items: center;
+    }
+
+    #box--logomarca {
+        grid-area: grd-logo;
+    }
+
+    #box--main--menu {
+        grid-area: grd-menu;
+    }
+
+    #box--social {
+        grid-area: grd-social;
+    }
+
+    .logo--header {
+        height: 76px;
+        width: auto;
+    }
+
+    ul.main--menu {
+        display: grid;
+        grid-column-gap: 10px;
+        grid-template-columns: repeat(7, auto);
+        align-items: center;
+        justify-content: right;
+        list-style-type: none;
+        height: 40px;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    ul.main--menu li {
+        display: grid;
+        text-align: center;
+        list-style: none;
+        width: auto;
+        min-height: auto;
+        margin: 0;
+    }
+
+    ul.main--menu li a {
+        font-variant: normal;
+        font-weight: 700;
+        font-size: 14px;
+        font-family: "Roboto", sans-serif;
+        line-height: 40px;
+        /* font: medium normal 500 18px/30px 'Roboto', sans-serif; */
+        color: $cor-white;
+        text-decoration: none;
+        text-transform: uppercase;
+        height: 100%;
+        padding: 0 10px;
+    }
+
+    ul.main--menu li a:hover {
+        // color: rgb(219, 153, 37);
+        color: $blue;
+    }
+
+    /* Menu Social  */
+    #box--social ul {
+        display: grid;
+        grid-column-gap: 2px;
+        grid-template-columns: repeat(4, auto);
+        align-items: center;
+        list-style-type: none;
+    }
+
+    #box--social ul li a {
+        color: rgb(219, 153, 37);
+        line-height: 40px;
+    }
+
+    #box--social ul li a:hover {
+        color: rgb(255, 255, 255);
+    }
+
+    .banner--home {
+        margin: 0 auto;
+        overflow: hidden;
+    }
+}

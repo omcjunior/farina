@@ -1,14 +1,397 @@
-
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,400i,900,900i");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,800");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Open+Sans:300,400,600,700,800,800i");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800,800i|Poppins:400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+// Layout responsive
+// @import url('web.scss') screen and (min-width: 1024px);
+// @import url('mobile.scss') screen and (max-width: 1024px) and (orientation: portrait);
+// @import url('mobile-landscape.scss') screen and (max-width: 1024px) and (orientation: landscape);
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+}
+
+a,
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-decoration: none;
+    outline-style: none;
+}
+
+.wrap-video video {
+  object-fit: cover;
+  object-position: center center;
+  min-height: 190px;
+  width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+    .logo--menu,
+    .button--menu {
+        display: none;
+    }
+
+    .crop {
+        margin: 0 auto;
+        max-width: $max-width;
+        width: 100%;
+    }
+
+    .width--calc {
+        width: -webkit-calc(100% - (300/3200) * 100vw);
+        width: calc(100% - (300 / 3200) * 100vw);
+    }
+
+    #header--main {
+        display: grid;
+        grid-template-rows: 100%;
+        align-items: center;
+        width: 100%;
+        height: 190px;
+        background-color: $cor-DimGray;
+        z-index: 9997;
+    }
+
+    #header--wrap--menu {
+        display: grid;
+        grid-template-columns: 250px auto;
+        grid-template-areas: "grd-logo grd-menu";
+        align-items: center;
+    }
+
+    #box--logomarca {
+        grid-area: grd-logo;
+    }
+
+    #box--main--menu {
+        grid-area: grd-menu;
+    }
+
+    #box--social {
+        grid-area: grd-social;
+    }
+
+    .logo--header {
+        height: 76px;
+        width: auto;
+    }
+
+    ul.main--menu {
+        display: grid;
+        grid-column-gap: 10px;
+        grid-template-columns: repeat(7, auto);
+        align-items: center;
+        justify-content: right;
+        list-style-type: none;
+        height: 40px;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    ul.main--menu li {
+        display: grid;
+        text-align: center;
+        list-style: none;
+        width: auto;
+        min-height: auto;
+        margin: 0;
+    }
+
+    ul.main--menu li a {
+        font-variant: normal;
+        font-weight: 700;
+        font-size: 14px;
+        font-family: $font-condensed;
+        line-height: 40px;
+        color: $cor-white;
+        text-decoration: none;
+        text-transform: uppercase;
+        height: 100%;
+        padding: 0 10px;
+    }
+
+    ul.main--menu li a:hover {
+        color: $cor-orange;
+    }
+
+    /* Menu Social  */
+    #box--social ul {
+        display: grid;
+        grid-column-gap: 2px;
+        grid-template-columns: repeat(4, auto);
+        align-items: center;
+        list-style-type: none;
+    }
+
+    #box--social ul li a {
+        color: $cor-orange;
+        line-height: 40px;
+    }
+
+    #box--social ul li a:hover {
+        color: $cor-white;
+    }
+
+    .banner--home {
+        margin: 0 auto;
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+    #header--main {
+        position: fixed;
+        width: 100%;
+        height: 80px;
+        background-color: $cor-DimGray;
+        z-index: 9999;
+        overflow-y: auto;
+        overflow-x: hidden;
+        border: 1px solid red;
+    }
+
+    #header--main.active {
+        background-color: $cor-DimGray;
+        z-index: 9999;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    #header--wrap--menu {
+        display: grid;
+        grid-template-areas:
+            "grd-logo grd-btn"
+            "grd-menu ."
+            "grd-social .";
+        grid-template-columns: auto 60px;
+        grid-template-rows: 80px auto 60px;
+        grid-row-gap: 5px;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: $cor-DimGray;
+    }
+
+    #box--main--menu,
+    #box--social {
+        display: none;
+    }
+
+    #box--logomarca,
+    #box--main--menu,
+    #box--social {
+        width: 100%;
+        /* height: 100%; */
+        align-self: center;
+    }
+
+    #box--logomarca {
+        grid-area: grd-logo;
+    }
+
+    #box--logomarca img {
+        height: 50px;
+        width: auto;
+    }
+
+    .button--menu {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+        cursor: pointer;
+    }
+
+    #box--main--menu {
+        grid-area: grd-menu;
+        /* align-self: center; */
+    }
+
+    ul.main--menu {
+        display: grid;
+        grid-row-gap: 10px;
+        list-style-type: none;
+        /* overflow-y: auto;
+      overflow-x: hidden; */
+    }
+
+    ul.main--menu li {
+        text-align: justify;
+    }
+
+    ul.main--menu li a {
+        display: block;
+        line-height: 42px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 800;
+        font-size: 18px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 100);
+        padding-left: 20px;
+        width: 100%;
+    }
+
+    #box--social {
+        grid-area: grd-social;
+    }
+
+    #box--social ul {
+        top: 40px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 20px;
+        align-items: center;
+        list-style-type: none;
+        width: 100%;
+    }
+
+    #box--social ul {
+        text-align: center;
+    }
+
+    #box--social ul li a {
+        color: rgb(219, 153, 37);
+        line-height: 40px;
+        font-size: 40px;
+    }
+
+    .tam3 {
+        font-size: 30px;
+    }
+
+    #box--social ul li a:hover {
+        color: rgb(255, 255, 255);
+    }
+
+    .t4 {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (orientation: landscape) {
+    #box--logomarca,
+    .logo--menu {
+        display: none;
+    }
+
+    #box--main--menu,
+    #box--social {
+        width: 100%;
+    }
+
+    #header--main {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: $cor-DimGray;
+        z-index: 9998;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    #header--wrap--menu {
+        padding: 30px 0;
+        display: grid;
+        grid-template-areas:
+            "grd-menu"
+            "grd-social";
+        grid-template-columns: auto 60px;
+        grid-template-rows: auto 80px;
+        grid-row-gap: 20px;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: $cor-DimGray;
+    }
+
+    #box--main--menu {
+        grid-area: grd-menu;
+    }
+
+    .button--menu {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+    }
+
+    #box--social {
+        grid-area: grd-social;
+        align-self: start;
+        justify-self: center;
+        padding: 20px 0;
+    }
+
+    #box--social ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 20px;
+        align-items: center;
+        list-style-type: none;
+        width: 100%;
+    }
+
+    #box--social ul li {
+        text-align: center;
+    }
+
+    #box--social ul li a {
+        color: rgb(219, 153, 37);
+        line-height: 40px;
+        font-size: 40px;
+    }
+
+    #box--social ul li a:hover {
+        color: rgb(255, 255, 255);
+    }
+
+    ul.main--menu {
+        display: grid;
+        grid-row-gap: 10px;
+        list-style-type: none;
+        /* overflow-y: auto;
+      overflow-x: hidden; */
+    }
+
+    ul.main--menu li {
+        text-align: justify;
+    }
+
+    ul.main--menu li a {
+        display: block;
+        line-height: 22px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 800;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 100);
+        padding-left: 20px;
+        width: 100%;
+    }
 }

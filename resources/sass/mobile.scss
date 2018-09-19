@@ -1,0 +1,129 @@
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+    #header--main {
+        position: fixed;
+        width: 100%;
+        height: 80px;
+        background-color: rgba(51, 51, 51, 100);
+        z-index: 9999;
+        overflow-y: auto;
+        overflow-x: hidden;
+        border: 1px solid red;
+    }
+
+    #header--main.active {
+        background-color: rgba(51, 51, 51, 100);
+        z-index: 9999;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    #header--wrap--menu {
+        display: grid;
+        grid-template-areas:
+            "grd-logo grd-btn"
+            "grd-menu ."
+            "grd-social .";
+        grid-template-columns: auto 60px;
+        grid-template-rows: 80px auto 60px;
+        grid-row-gap: 5px;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(51, 51, 51);
+    }
+
+    #box--main--menu,
+    #box--social {
+        display: none;
+    }
+
+    #box--logomarca,
+    #box--main--menu,
+    #box--social {
+        width: 100%;
+        /* height: 100%; */
+        align-self: center;
+    }
+
+    #box--logomarca {
+        grid-area: grd-logo;
+    }
+
+    #box--logomarca img {
+        height: 50px;
+        width: auto;
+    }
+
+    .button--menu {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+        cursor: pointer;
+    }
+
+    #box--main--menu {
+        grid-area: grd-menu;
+        /* align-self: center; */
+    }
+
+    ul.main--menu {
+        display: grid;
+        grid-row-gap: 10px;
+        list-style-type: none;
+        /* overflow-y: auto;
+        overflow-x: hidden; */
+    }
+
+    ul.main--menu li {
+        text-align: justify;
+    }
+
+    ul.main--menu li a {
+        display: block;
+        line-height: 42px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 800;
+        font-size: 18px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 100);
+        padding-left: 20px;
+        width: 100%;
+    }
+
+    #box--social {
+        grid-area: grd-social;
+    }
+
+    #box--social ul {
+        top: 40px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 20px;
+        align-items: center;
+        list-style-type: none;
+        width: 100%;
+    }
+
+    #box--social ul {
+        text-align: center;
+    }
+
+    #box--social ul li a {
+        color: rgb(219, 153, 37);
+        line-height: 40px;
+        font-size: 40px;
+    }
+
+    .tam3 {
+        font-size: 30px;
+    }
+
+    #box--social ul li a:hover {
+        color: rgb(255, 255, 255);
+    }
+
+    .t4 {
+        font-size: 22px;
+    }
+}

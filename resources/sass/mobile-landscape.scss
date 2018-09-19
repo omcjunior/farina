@@ -1,0 +1,101 @@
+@media only screen and (max-width: 1024px) and (orientation: landscape) {
+    #box--logomarca,
+    .logo--menu {
+        display: none;
+    }
+
+    #box--main--menu,
+    #box--social {
+        width: 100%;
+    }
+
+    #header--main {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(51, 51, 51, 40);
+        z-index: 9998;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    #header--wrap--menu {
+        padding: 30px 0;
+        display: grid;
+        grid-template-areas:
+            "grd-menu"
+            "grd-social";
+        grid-template-columns: auto 60px;
+        grid-template-rows: auto 80px;
+        grid-row-gap: 20px;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(51, 51, 51);
+    }
+
+    #box--main--menu {
+        grid-area: grd-menu;
+    }
+
+    .button--menu {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+    }
+
+    #box--social {
+        grid-area: grd-social;
+        align-self: start;
+        justify-self: center;
+        padding: 20px 0;
+    }
+
+    #box--social ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 20px;
+        align-items: center;
+        list-style-type: none;
+        width: 100%;
+    }
+
+    #box--social ul li {
+        text-align: center;
+    }
+
+    #box--social ul li a {
+        color: rgb(219, 153, 37);
+        line-height: 40px;
+        font-size: 40px;
+    }
+
+    #box--social ul li a:hover {
+        color: rgb(255, 255, 255);
+    }
+
+    ul.main--menu {
+        display: grid;
+        grid-row-gap: 10px;
+        list-style-type: none;
+        /* overflow-y: auto;
+        overflow-x: hidden; */
+    }
+
+    ul.main--menu li {
+        text-align: justify;
+    }
+
+    ul.main--menu li a {
+        display: block;
+        line-height: 22px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 800;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 100);
+        padding-left: 20px;
+        width: 100%;
+    }
+}

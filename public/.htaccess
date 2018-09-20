@@ -1,4 +1,5 @@
 <IfModule mod_rewrite.c>
+
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
@@ -19,4 +20,5 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule \.(jpe?g|png|gif|ico)$ /img/no-image-available.gif [L,NC]
     RewriteRule ^ index.php [L]
+    
 </IfModule>
